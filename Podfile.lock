@@ -4,6 +4,9 @@ PODS:
   - RxCocoa (5.0.1):
     - RxRelay (~> 5)
     - RxSwift (~> 5)
+  - RxGesture (3.0.1):
+    - RxCocoa (~> 5.0)
+    - RxSwift (~> 5.0)
   - RxRelay (5.0.1):
     - RxSwift (~> 5)
   - RxSwift (5.0.1)
@@ -13,6 +16,7 @@ PODS:
 DEPENDENCIES:
   - RxBlocking (~> 5)
   - RxCocoa (~> 5)
+  - RxGesture
   - RxSwift (~> 5)
   - RxTest (~> 5)
 
@@ -20,6 +24,7 @@ SPEC REPOS:
   trunk:
     - RxBlocking
     - RxCocoa
+    - RxGesture
     - RxRelay
     - RxSwift
     - RxTest
@@ -27,10 +32,11 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   RxBlocking: c5e090f42d046df8b0e7752742510f349963710f
   RxCocoa: e741b9749968e8a143e2b787f1dfbff2b63d0a5c
+  RxGesture: a3f8dd6adf078110ed5e1c9c30d09d705a09852e
   RxRelay: 89d54507f4fd4d969e6ec1d4bd7f3673640b4640
   RxSwift: e2dc62b366a3adf6a0be44ba9f405efd4c94e0c4
   RxTest: 0132f952a61da82d5233abedaa559df91e5330e5
 
-PODFILE CHECKSUM: 4372fb08a417b79a2f4df8f8729fa6a2e97833af
+PODFILE CHECKSUM: 0f4382aecec027e92a0416b19dad4dea8e9f7cb1
 
 COCOAPODS: 1.9.0.beta.2

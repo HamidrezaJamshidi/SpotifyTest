@@ -25,6 +25,8 @@
 		D0648EB123D0D01700313939 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0648EAF23D0D01700313939 /* LoginVC.swift */; };
 		D0648EB223D0D01700313939 /* LoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0648EB023D0D01700313939 /* LoginVC.xib */; };
 		D0648EB723D0D59B00313939 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0648EB623D0D59B00313939 /* Extension.swift */; };
+		D0648EB923D0E47500313939 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0648EB823D0E47500313939 /* LoginViewModel.swift */; };
+		D0648EBB23D0E6D700313939 /* ViewModelHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0648EBA23D0E6D700313939 /* ViewModelHolder.swift */; };
 		D0E5B76823D056E1000CDDFF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E5B76723D056E1000CDDFF /* AppDelegate.swift */; };
 		D0E5B77423D056E2000CDDFF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0E5B77223D056E2000CDDFF /* LaunchScreen.storyboard */; };
 		D0E5B77F23D056E3000CDDFF /* SpotifyTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E5B77E23D056E3000CDDFF /* SpotifyTestTests.swift */; };
@@ -73,6 +75,8 @@
 		D0648EAF23D0D01700313939 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		D0648EB023D0D01700313939 /* LoginVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginVC.xib; sourceTree = "<group>"; };
 		D0648EB623D0D59B00313939 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		D0648EB823D0E47500313939 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		D0648EBA23D0E6D700313939 /* ViewModelHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelHolder.swift; sourceTree = "<group>"; };
 		D0E5B76423D056E1000CDDFF /* SpotifyTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpotifyTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0E5B76723D056E1000CDDFF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D0E5B77323D056E2000CDDFF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -173,6 +177,7 @@
 		D0648EAD23D0CF4600313939 /* Arch */ = {
 			isa = PBXGroup;
 			children = (
+				D0648EBA23D0E6D700313939 /* ViewModelHolder.swift */,
 			);
 			path = Arch;
 			sourceTree = "<group>";
@@ -285,6 +290,7 @@
 		D0E5B79A23D0739D000CDDFF /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				D0648EB823D0E47500313939 /* LoginViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -593,8 +599,10 @@
 			files = (
 				D0648EB723D0D59B00313939 /* Extension.swift in Sources */,
 				D0E5B76823D056E1000CDDFF /* AppDelegate.swift in Sources */,
+				D0648EB923D0E47500313939 /* LoginViewModel.swift in Sources */,
 				D0648EAB23D0CA4D00313939 /* TrackListVC.swift in Sources */,
 				D0648EB123D0D01700313939 /* LoginVC.swift in Sources */,
+				D0648EBB23D0E6D700313939 /* ViewModelHolder.swift in Sources */,
 				D0648EA623D0C8D000313939 /* BaseCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

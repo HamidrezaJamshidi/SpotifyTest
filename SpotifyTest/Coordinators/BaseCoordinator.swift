@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BaseCoordinator: TrackListCoordinator {
+class BaseCoordinator: LoginCoordinator {
     private unowned var window: UIWindow
     private(set) var navigation: UINavigationController!
 //    private let disposeBag = DisposeBag()
@@ -21,26 +21,25 @@ class BaseCoordinator: TrackListCoordinator {
     }
     
     private func start(){
-//        let trackListVC = TrackListVC.init(nibName: "TrackListVC", bundle: nil)
-//        navigation = UINavigationController(rootViewController: trackListVC)
+
         let loginVC = LoginVC.init(nibName: "LoginVC", bundle: nil)
+        loginVC.viewModel = LoginViewModel(coordinator: self)
         navigation = UINavigationController(rootViewController: loginVC)
+        navigation.navigationBar.isHidden = true
         self.window.rootViewController = navigation
         self.window.makeKeyAndVisible()
-//        peopleViewController.viewModel = PopularPeopleViewModel(store: dataStore, api: api, coordinator: self)
     }
     
-//    func coordinateToWatchList() {
-//        let vc = WatchListViewController.init(nibName: "WatchListViewController", bundle: nil)
-//        vc.viewModel = WatchListViewModel(store: dataStore, coordinator: self)
-//
-//        self.navigation.pushViewController(vc, animated: true)
-//    }
+    func coordinateToTrackList() {
+        let trackListVC = TrackListVC.init(nibName: "TrackListVC", bundle: nil)
+       // trackListVC.viewModel = WatchListViewModel(store: dataStore, coordinator: self)
+        self.navigation.pushViewController(trackListVC, animated: true)
+    }
 }
 
-protocol TrackListCoordinator {
-//    func coordinateToPeopleDetails(for people: PopularPeople)
-//    func coordinateToMovieDetails(for knownFor: KnownFor)
-//    func coordinateToWatchList()
+protocol LoginCoordinator {
+    //    func coordinateToPeopleDetails(for people: PopularPeople)
+    //    func coordinateToMovieDetails(for knownFor: KnownFor)
+    func coordinateToTrackList()
 }
 
