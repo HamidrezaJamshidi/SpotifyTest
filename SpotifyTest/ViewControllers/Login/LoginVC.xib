@@ -28,11 +28,12 @@
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ico-spotify-logo" translatesAutoresizingMaskIntoConstraints="NO" id="FnU-pQ-taD">
                     <rect key="frame" x="107" y="353" width="200" height="200"/>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iZ5-FQ-a1w">
-                    <rect key="frame" x="107" y="792" width="200" height="50"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iZ5-FQ-a1w">
+                    <rect key="frame" x="103.5" y="772" width="207" height="60"/>
                     <color key="backgroundColor" red="0.1137254902" green="0.72549019609999998" blue="0.3294117647" alpha="1" colorSpace="calibratedRGB"/>
-                    <fontDescription key="fontDescription" name="Circular-Book" family="Circular" pointSize="18"/>
-                    <state key="normal" title="Sign In">
+                    <fontDescription key="fontDescription" name="Circular-Book" family="Circular" pointSize="16"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
+                    <state key="normal" title="Log in with Spotify" image="ico-spotify">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                     <userDefinedRuntimeAttributes>
@@ -45,19 +46,20 @@
             <color key="backgroundColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="FnU-pQ-taD" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="8VQ-bu-h4X"/>
-                <constraint firstItem="iZ5-FQ-a1w" firstAttribute="height" secondItem="FnU-pQ-taD" secondAttribute="height" multiplier="0.25" id="9Eo-IE-ZHV"/>
+                <constraint firstItem="iZ5-FQ-a1w" firstAttribute="height" secondItem="FnU-pQ-taD" secondAttribute="height" multiplier="0.3" id="9Eo-IE-ZHV"/>
                 <constraint firstItem="FnU-pQ-taD" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.483092" id="EaU-S8-YMa"/>
-                <constraint firstItem="iZ5-FQ-a1w" firstAttribute="width" secondItem="FnU-pQ-taD" secondAttribute="width" id="FJb-ix-uv0"/>
                 <constraint firstItem="iZ5-FQ-a1w" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="J1J-7V-tLH"/>
                 <constraint firstItem="FnU-pQ-taD" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.223214" id="NKp-f6-g2Z"/>
                 <constraint firstItem="FnU-pQ-taD" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="VOa-f3-7ak"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="iZ5-FQ-a1w" secondAttribute="bottom" constant="20" id="fBq-qC-aVi"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="iZ5-FQ-a1w" secondAttribute="bottom" constant="30" id="fBq-qC-aVi"/>
+                <constraint firstItem="iZ5-FQ-a1w" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.5" id="fh3-G1-2a3"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="139" y="138"/>
         </view>
     </objects>
     <resources>
+        <image name="ico-spotify" width="25" height="25"/>
         <image name="ico-spotify-logo" width="1000" height="1000"/>
     </resources>
 </document>

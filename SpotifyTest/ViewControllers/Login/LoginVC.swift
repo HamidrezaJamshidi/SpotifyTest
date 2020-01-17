@@ -26,14 +26,25 @@ class LoginVC: UIViewController {
     
     private func setupUI() {
         DispatchQueue.main.async {
-            self.viewModel.animateLogo(refView: self.view, img: self.imgLogo)
+            self.viewModel.animateLogo(refView: self.view, img: self.imgLogo, btn: self.btnSignIn)
         }
     }
     
     private func setupBinding() {
         btnSignIn.rx.tap.subscribe(onNext: {
+            if UIApplication.shared.openURL(SpotifyManager.shared.loginUrl!) {
+                if SpotifyManager.shared.auth.canHandle(SpotifyManager.shared.auth.redirectURL) {
+                }
+            }
         }).disposed(by: disposeBag)
+        
+        SpotifyManager.shared.userId.subscribe(onNext: { userName in
+            print(userName)
+        }).disposed(by: disposeBag)
+        
+        SpotifyManager.shared.emailId.subscribe(onNext: { email in
+            print(email)
+        }).disposed(by: disposeBag)
+
     }
-    
-     
 }

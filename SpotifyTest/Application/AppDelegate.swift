@@ -13,12 +13,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var appCoordinator: BaseCoordinator? = nil
-    
+        
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
         
         self.appCoordinator = BaseCoordinator(window: window!)
+        SpotifyManager.shared.setupSpotifyAuth()
+        
         return true
+    }
+    
+    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+        
+        let flag = SpotifyManager.shared.openSpotifyRedirectUrl(url: url)
+        return flag
+        
     }
 
 }
