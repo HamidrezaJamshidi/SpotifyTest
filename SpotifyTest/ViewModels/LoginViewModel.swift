@@ -39,33 +39,5 @@ struct LoginViewModel: ViewModel {
     
     func stopLogoAnimation() {
         animator.removeAllBehaviors()
-    }
-    
-//    func detectIsLogin() {
-//
-//        if DataStore.shared.getStringPref("IS_LOGIN") == "1" {
-//            coordinator.coordinateToTrackList()
-//
-//            let userDefaults = UserDefaults.standard
-//
-//            if let sessionObj:AnyObject = userDefaults.object(forKey: "SpotifySession") as AnyObject? {
-//
-//                let sessionDataObj = sessionObj as! Data
-//                let firstTimeSession = NSKeyedUnarchiver.unarchiveObject(with: sessionDataObj) as! SPTSession
-//
-//                if !firstTimeSession.isValid() {
-//                    SPTAuth.defaultInstance()?.renewSession(firstTimeSession, callback: { error, newSession in
-//                        if error != nil {
-//                            print("error!")
-//                        }
-//                        if let newSession = newSession {
-//                            let sessionData = NSKeyedArchiver.archivedData(withRootObject: newSession)
-//                            DataStore.shared.saveEncodable(name: sessionData, key: "SpotifySession")
-//                        }
-//                    })
-//
-//                }
-//            }
-//        }
-//    }
+    }    
 }

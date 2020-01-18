@@ -10,6 +10,7 @@ import UIKit
 import RxSwift
 import RxAlamofire
 import Alamofire
+import Kingfisher
 
 final class APIManager : UIViewController  {
     
@@ -23,11 +24,6 @@ final class APIManager : UIViewController  {
             "Content-Type": "application/json",
             "Accept": "application/json"
         ]
-
-//        if let authToken = SharedPreferencesHelper.sharedInstance.getStringPref("AUTH_TOKEN") {
-//            headers["Authorization"] = "Bearer" + " " + authToken
-//            print("TOKEN: \(authToken)")
-//        }
         return headers
     }
 
@@ -35,7 +31,7 @@ final class APIManager : UIViewController  {
         
         UIApplication.shared.beginIgnoringInteractionEvents()
         RxAlamofire.requestJSON(method , url, parameters: params , encoding: encoding , headers: header)
-        .subscribe(onNext: { (r,json) in
+        .subscribe(onNext: { [unowned self] (r,json) in
             
             switch r.statusCode {
             case 200 :
@@ -69,10 +65,25 @@ final class APIManager : UIViewController  {
         
                                 
         }, onError: { error in
-//            self.displayErrorServer(error as NSError)
         }).disposed(by: disposeBag)
     }
     
+    func downloadImage(_ urlString: String,  completionHandler: @escaping (UIImage) -> ()) {
+        guard let url = URL.init(string: urlString) else {
+            return
+        }
+        let resource = ImageResource(downloadURL: url)
+
+        KingfisherManager.shared.retrieveImage(with: resource, options: nil, progressBlock: nil) { result in
+            switch result {
+            case .success(let value):
+                print("Image: \(value.image). Got from: \(value.cacheType)")
+                completionHandler(value.image)
+            case .failure(let error):
+                print("Error: \(error)")
+            }
+        }
+    }
 }
 
 

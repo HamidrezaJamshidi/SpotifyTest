@@ -24,10 +24,15 @@ struct Track {
     }
 }
 
-class TrackListViewModel: ViewModel {
+struct TrackListViewModel: ViewModel {
     
+    let coordinator: TrackListCoordinator
     public let trackList: PublishSubject<[Track]> = PublishSubject()
     private let disposeBag = DisposeBag()
+    
+    init(coordinator: TrackListCoordinator) {
+        self.coordinator = coordinator
+    }
     
     func search(query: String) {
 
@@ -35,7 +40,7 @@ class TrackListViewModel: ViewModel {
         let token = auth.session.accessToken
         var trackListItem = [Track]()
         
-        SPTSearch.perform(withQuery: query, queryType: .queryTypeTrack, accessToken: token) { [weak self] (error, listPage) in
+        SPTSearch.perform(withQuery: query, queryType: .queryTypeTrack, accessToken: token) { (error, listPage) in
             
             if let error = error {
                 print(error.localizedDescription)
@@ -49,14 +54,10 @@ class TrackListViewModel: ViewModel {
                 guard let album = track.album as? SPTPartialAlbum else { return }
                 guard let img = track.album.largestCover as? SPTImage else { return }
                 guard let artist = track.artists.first as? SPTPartialArtist else { return }
-                print(track.name) // trackName
-                print(album.name) // albumName
-                print(artist.name)
-                print(img.imageURL)
                 let track = Track(name: track.name, album: album.name, artist: artist.name, img: img.imageURL.absoluteString)
                 trackListItem.append(track)
             }
-            self?.trackList.onNext(trackListItem)
+            self.trackList.onNext(trackListItem)
         }
     }
 }

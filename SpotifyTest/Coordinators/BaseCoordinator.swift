@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BaseCoordinator: LoginCoordinator {
+class BaseCoordinator: LoginCoordinator , TrackListCoordinator {
     private unowned var window: UIWindow
     private(set) var navigation: UINavigationController!
 
@@ -30,8 +30,16 @@ class BaseCoordinator: LoginCoordinator {
     
     func coordinateToTrackList() {
         let trackListVC = TrackListVC.init(nibName: "TrackListVC", bundle: nil)
+        trackListVC.trackListViewModel = TrackListViewModel(coordinator: self)
         self.navigation.pushViewController(trackListVC, animated: true)
     }
+    
+    func coordinateToTrackDetail(for track: Track) {
+        let trackDetailVC = TrackDetailVC.init(nibName: "TrackDetailVC", bundle: nil)
+        trackDetailVC.trackDetailViewModel = TrackDetailViewModel(coordinator: self, track: track)
+        self.navigation.pushViewController(trackDetailVC, animated: true)
+    }
+
 }
 
 protocol LoginCoordinator {
@@ -39,6 +47,6 @@ protocol LoginCoordinator {
 }
 
 protocol TrackListCoordinator {
-    func coordinateToDetailTrackList()
+    func coordinateToTrackDetail(for track: Track)
 }
 

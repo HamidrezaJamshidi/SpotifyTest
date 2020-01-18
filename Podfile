@@ -9,6 +9,7 @@ target 'SpotifyTest' do
     pod 'RxSwift', '~> 5'
     pod 'RxCocoa', '~> 5'
     pod 'RxAlamofire'
+    pod 'Kingfisher', '~> 5.0'
     pod 'ReachabilitySwift'
 
   target 'SpotifyTestTests' do

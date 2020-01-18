@@ -23,7 +23,7 @@ class TrackListVC: UIViewController {
     @IBOutlet private var loadingView: UIActivityIndicatorView!
     
     var reachability: Reachability?
-    var trackListViewModel = TrackListViewModel()
+    var trackListViewModel: TrackListViewModel!
     private(set) var disposeBag = DisposeBag()
     
     override func viewDidLoad() {
@@ -48,59 +48,39 @@ class TrackListVC: UIViewController {
 
     private func setupBinding() {
         
+        txtSearchBar.becomeFirstResponder()
         trackListViewModel.trackList.bind(to: tableView.rx.items(cellIdentifier: "TrackListCell", cellType: TrackListCell.self)) { (row,item,cell) in
             self.configureCell(cell: cell, item: item)
         }.disposed(by: disposeBag)
         
-        tableView.rx.modelSelected(TrackListCell.self).subscribe(onNext: { item in
-           // print("SelectedItem: \(item.name)")
+        tableView.rx.itemSelected.subscribe(onNext: { [weak self] indexPath in
+            guard let item:Track = try! self?.tableView.rx.model(at: indexPath) else { return }
+            self?.trackListViewModel.coordinator.coordinateToTrackDetail(for: item)
         }).disposed(by: disposeBag)
-        
-//        trackListViewModel.trackList.bind(to: tableView.rx.items) {(tv, row, item) -> UITableViewCell in
-//
-//            let cell = tv.dequeueReusableCell(withIdentifier: "TrackListCell", for: IndexPath(row: row, section: 0)) as! TrackListCell
-//
-//            cell.lblDeviceName.text = item.deviceModel
-//            cell.lblDeviceOS.text = (item.deviceType ?? "") + "," + (item.osVersion ?? "")
-//            cell.lblDate.text = item.dateCreated
-//            cell.lblIpAddress.text = item.ipAddress
-//
-//            cell.subscribeBtnAction = { [unowned self] in
-//                self.idForDelete = item.id
-//                print(row)
-//                self.showPopupAlertWith(viewController: self, title:ConstantStrings.popSessionTitle , descMsg: ConstantStrings.popSessionInfo, img: PopupConstant.imgDefaultStr, lineColor: ConstantStrings.customGrayEnd, isHideButton: false)
-//            }
-//
-//            return cell
-//        }.disposed(by: disposeBag)
+
         
         txtSearchBar
             .rx
             .controlEvent(.editingChanged)
             .withLatestFrom(txtSearchBar.rx.text.orEmpty)
+            .throttle(DispatchTimeInterval.seconds(3), latest: false, scheduler: MainScheduler.instance)
             .map { $0 }
-            .subscribe(onNext: { (text) in
+            .subscribe(onNext: { [weak self] (text) in
                 print(text)
-                self.trackListViewModel.search(query: text)
+                self?.trackListViewModel.search(query: text)
                 DispatchQueue.main.async {
-                    self.tableView.reloadData()
+                    self?.tableView.reloadData()
                 }
             }).disposed(by: disposeBag)
         
-        txtSearchBar.rx.controlEvent(.editingDidBegin).subscribe(onNext: {
-  
-        }).disposed(by: disposeBag)
-        
-        txtSearchBar.rx.controlEvent(.editingDidEnd).subscribe(onNext: {
-            
-        }).disposed(by: disposeBag)
-
     }
     
     private func configureCell(cell: TrackListCell , item: Track) {
-        cell.titleLabel.text = item.artist
+        cell.titleLabel.text = item.name
         cell.albumLabel.text = item.album
-        cell.artistLabel.text = item.name
-        cell.trackImage.downloaded(from: item.img)
+        cell.artistLabel.text = item.artist
+        APIManager.shared.downloadImage(item.img , completionHandler: { downloadedImg in
+            cell.trackImage.image = downloadedImg
+        })
     }
 }

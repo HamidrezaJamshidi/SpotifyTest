@@ -35,9 +35,9 @@ class LoginVC: UIViewController {
             SpotifyManager.shared.loginSpotify()
         }).disposed(by: disposeBag)
         
-        SpotifyManager.shared.isLoginsucceed.subscribe(onNext: { result in
-            self.viewModel.stopLogoAnimation()
-            self.viewModel.coordinator.coordinateToTrackList()
+        SpotifyManager.shared.isLoginsucceed.subscribe(onNext: { [weak self] result in
+            self?.viewModel.stopLogoAnimation()
+            self?.viewModel.coordinator.coordinateToTrackList()
         }).disposed(by: disposeBag)
         
         SpotifyManager.shared.userId.subscribe(onNext: { userName in

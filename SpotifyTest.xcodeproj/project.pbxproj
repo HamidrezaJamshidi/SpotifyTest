@@ -48,6 +48,9 @@
 		D0648F4623D247D100313939 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0648F4523D247D000313939 /* APIManager.swift */; };
 		D0648F4C23D29F7100313939 /* TrackListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0648F4A23D29F7100313939 /* TrackListCell.swift */; };
 		D0648F4D23D29F7100313939 /* TrackListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0648F4B23D29F7100313939 /* TrackListCell.xib */; };
+		D0648F5023D2B81100313939 /* TrackDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0648F4E23D2B81100313939 /* TrackDetailVC.swift */; };
+		D0648F5123D2B81100313939 /* TrackDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0648F4F23D2B81100313939 /* TrackDetailVC.xib */; };
+		D0648F5323D2BA2C00313939 /* TrackDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0648F5223D2BA2C00313939 /* TrackDetailViewModel.swift */; };
 		D0E5B76823D056E1000CDDFF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E5B76723D056E1000CDDFF /* AppDelegate.swift */; };
 		D0E5B77423D056E2000CDDFF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0E5B77223D056E2000CDDFF /* LaunchScreen.storyboard */; };
 		D0E5B77F23D056E3000CDDFF /* SpotifyTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E5B77E23D056E3000CDDFF /* SpotifyTestTests.swift */; };
@@ -133,6 +136,9 @@
 		D0648F4523D247D000313939 /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		D0648F4A23D29F7100313939 /* TrackListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackListCell.swift; sourceTree = "<group>"; };
 		D0648F4B23D29F7100313939 /* TrackListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrackListCell.xib; sourceTree = "<group>"; };
+		D0648F4E23D2B81100313939 /* TrackDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackDetailVC.swift; sourceTree = "<group>"; };
+		D0648F4F23D2B81100313939 /* TrackDetailVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrackDetailVC.xib; sourceTree = "<group>"; };
+		D0648F5223D2BA2C00313939 /* TrackDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackDetailViewModel.swift; sourceTree = "<group>"; };
 		D0E5B76423D056E1000CDDFF /* SpotifyTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpotifyTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0E5B76723D056E1000CDDFF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D0E5B77323D056E2000CDDFF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -230,6 +236,8 @@
 		D0648EA823D0CA1E00313939 /* TrackDetail */ = {
 			isa = PBXGroup;
 			children = (
+				D0648F4E23D2B81100313939 /* TrackDetailVC.swift */,
+				D0648F4F23D2B81100313939 /* TrackDetailVC.xib */,
 			);
 			path = TrackDetail;
 			sourceTree = "<group>";
@@ -393,6 +401,7 @@
 			children = (
 				D0648EB823D0E47500313939 /* LoginViewModel.swift */,
 				D0648F2223D223F200313939 /* TrackListViewModel.swift */,
+				D0648F5223D2BA2C00313939 /* TrackDetailViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -561,6 +570,7 @@
 				D0648F4D23D29F7100313939 /* TrackListCell.xib in Resources */,
 				D0648EA223D0BD8400313939 /* lineto-circular-boldItalic.ttf in Resources */,
 				D0E5B77423D056E2000CDDFF /* LaunchScreen.storyboard in Resources */,
+				D0648F5123D2B81100313939 /* TrackDetailVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -710,6 +720,7 @@
 				D0648F3223D22FD600313939 /* Reachability+Rx.swift in Sources */,
 				D0648F4323D234A200313939 /* Items.swift in Sources */,
 				D0648F4423D234A200313939 /* Images.swift in Sources */,
+				D0648F5323D2BA2C00313939 /* TrackDetailViewModel.swift in Sources */,
 				D0648F3D23D234A200313939 /* Tracks.swift in Sources */,
 				D0E5B76823D056E1000CDDFF /* AppDelegate.swift in Sources */,
 				D0648F2323D223F200313939 /* TrackListViewModel.swift in Sources */,
@@ -717,6 +728,7 @@
 				D0648F4623D247D100313939 /* APIManager.swift in Sources */,
 				D0648EB923D0E47500313939 /* LoginViewModel.swift in Sources */,
 				D0648EAB23D0CA4D00313939 /* TrackListVC.swift in Sources */,
+				D0648F5023D2B81100313939 /* TrackDetailVC.swift in Sources */,
 				D0648F3E23D234A200313939 /* External_ids.swift in Sources */,
 				D0648EB123D0D01700313939 /* LoginVC.swift in Sources */,
 				D0648F4023D234A200313939 /* Album.swift in Sources */,
