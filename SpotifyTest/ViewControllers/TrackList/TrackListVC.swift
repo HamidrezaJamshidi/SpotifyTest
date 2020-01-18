@@ -51,18 +51,17 @@ class TrackListVC: UIViewController {
             .throttle(DispatchTimeInterval.seconds(3), latest: false, scheduler: MainScheduler.instance)
             .map { $0 }
             .subscribe(onNext: { [weak self] (text) in
-                print(text)
+               
                 self?.loadingView.startAnimating()
                 if Connectivity.Connected {
                     self?.trackListViewModel.search(query: text)
+                    DispatchQueue.main.async {
+                        self?.tableView.reloadData()
+                    }
                 }
                 else {
                     let alert = UIAlertView(title:"Warning",message: "No internet connection.",delegate: nil ,cancelButtonTitle: "Ok")
                     alert.show()
-                }
-                DispatchQueue.main.async {
-                    self?.tableView.reloadData()
-                    self?.loadingView.stopAnimating()
                 }
 
             }).disposed(by: disposeBag)
@@ -73,8 +72,11 @@ class TrackListVC: UIViewController {
         cell.titleLabel.text = item.name
         cell.albumLabel.text = item.album
         cell.artistLabel.text = item.artist
-        APIManager.shared.downloadImage(item.img , completionHandler: { downloadedImg in
+        APIManager.shared.downloadImage(item.img , completionHandler: { [weak self] downloadedImg in
             cell.trackImage.image = downloadedImg
+            DispatchQueue.main.async {
+                self?.loadingView.stopAnimating()
+            }
         })
     }
 }
