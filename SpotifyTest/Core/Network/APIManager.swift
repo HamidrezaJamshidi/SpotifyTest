@@ -20,7 +20,7 @@ final class APIManager : UIViewController  {
     public let loadingDoneOnError: PublishSubject<Bool> = PublishSubject()
     
     class func headers() -> HTTPHeaders {
-        var headers: HTTPHeaders = [
+        let headers: HTTPHeaders = [
             "Content-Type": "application/json",
             "Accept": "application/json"
         ]
@@ -31,7 +31,7 @@ final class APIManager : UIViewController  {
         
         UIApplication.shared.beginIgnoringInteractionEvents()
         RxAlamofire.requestJSON(method , url, parameters: params , encoding: encoding , headers: header)
-        .subscribe(onNext: { [unowned self] (r,json) in
+        .subscribe(onNext: { (r,json) in
             
             switch r.statusCode {
             case 200 :
@@ -86,4 +86,8 @@ final class APIManager : UIViewController  {
     }
 }
 
-
+class Connectivity {
+    class var Connected: Bool {
+        return NetworkReachabilityManager()?.isReachable ?? false
+    }
+}

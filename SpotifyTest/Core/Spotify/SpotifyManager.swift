@@ -84,7 +84,7 @@ final class SpotifyManager : SpotifyProtocol  {
             UIApplication.topViewController?.present(safari, animated: true, completion: nil)
         }
     }
-
+    
     func refreshToken() {
         
         auth.renewSession(auth.session) { (error, session) in
@@ -96,7 +96,6 @@ final class SpotifyManager : SpotifyProtocol  {
             }
         }
     }
-    
 }
 
 protocol SpotifyProtocol {
@@ -104,43 +103,3 @@ protocol SpotifyProtocol {
     func refreshToken()
     func openSpotifyRedirectUrl(url: URL) -> Bool
 }
-
-
-//class SpotifyAuthValidation {
-//
-//
-//    let defaults = UserDefaults.standard
-//
-//    static let shared = SpotifyAuthValidation()
-//
-//    var isLoggedIn: Bool{
-//        get {
-//            return defaults.bool(forKey: UserDefaults.isLoggedIn)
-//        }
-//        set {
-//            defaults.set(newValue, forKey: UserDefaults.isLoggedIn)
-//        }
-//    }
-//
-//    var tokenId: String? {
-//        get {
-//            return defaults.value(forKey: UserDefaults.tokenId) as? String
-//        } set {
-//            defaults.set(newValue, forKey: UserDefaults.tokenId)
-//        }
-//}
-//    var sessiontokenId: String? {
-//        get {
-//            return defaults.value(forKey: UserDefaults.sessiontokenId) as? String
-//        } set {
-//            defaults.set(newValue, forKey: UserDefaults.sessiontokenId)
-//        }
-//    }
-//    var sessionuserId: String? {
-//        get {
-//            return defaults.value(forKey: UserDefaults.sessionuserId) as? String
-//        } set {
-//            defaults.set(newValue, forKey: UserDefaults.sessionuserId)
-//        }
-//    }
-//}

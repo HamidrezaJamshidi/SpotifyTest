@@ -18,5 +18,6 @@ class TrackListCell: UITableViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
+        trackImage.image = nil
     }
 }

@@ -22,35 +22,20 @@ class TrackListVC: UIViewController {
     }
     @IBOutlet private var loadingView: UIActivityIndicatorView!
     
-    var reachability: Reachability?
+    
     var trackListViewModel: TrackListViewModel!
     private(set) var disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        txtSearchBar.becomeFirstResponder()
         setupBinding()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        Reachability.rx.isDisconnected
-            .subscribe(onNext:{
-//                let error = MessageView.viewFromNib(layout: .tabView)
-//                error.configureTheme(.error)
-//                error.configureContent(title: "Error", body: "Not connected to the network!")
-//                error.button?.setTitle("Stop", for: .normal)
-//                SwiftMessages.show(view: error)
-            })
-            .disposed(by:disposeBag)
-    }
-
-
     private func setupBinding() {
         
-        txtSearchBar.becomeFirstResponder()
-        trackListViewModel.trackList.bind(to: tableView.rx.items(cellIdentifier: "TrackListCell", cellType: TrackListCell.self)) { (row,item,cell) in
-            self.configureCell(cell: cell, item: item)
+        trackListViewModel.trackList.bind(to: tableView.rx.items(cellIdentifier: "TrackListCell", cellType: TrackListCell.self)) { [weak self] (row,item,cell) in
+            self?.configureCell(cell: cell, item: item)
         }.disposed(by: disposeBag)
         
         tableView.rx.itemSelected.subscribe(onNext: { [weak self] indexPath in
@@ -67,10 +52,19 @@ class TrackListVC: UIViewController {
             .map { $0 }
             .subscribe(onNext: { [weak self] (text) in
                 print(text)
-                self?.trackListViewModel.search(query: text)
+                self?.loadingView.startAnimating()
+                if Connectivity.Connected {
+                    self?.trackListViewModel.search(query: text)
+                }
+                else {
+                    let alert = UIAlertView(title:"Warning",message: "No internet connection.",delegate: nil ,cancelButtonTitle: "Ok")
+                    alert.show()
+                }
                 DispatchQueue.main.async {
                     self?.tableView.reloadData()
+                    self?.loadingView.stopAnimating()
                 }
+
             }).disposed(by: disposeBag)
         
     }

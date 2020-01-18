@@ -28,15 +28,12 @@
 		D0648EB923D0E47500313939 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0648EB823D0E47500313939 /* LoginViewModel.swift */; };
 		D0648EBB23D0E6D700313939 /* ViewModelHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0648EBA23D0E6D700313939 /* ViewModelHolder.swift */; };
 		D0648EE723D12D0A00313939 /* ServiceConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0648EE623D12D0A00313939 /* ServiceConfig.swift */; };
-		D0648EEB23D12D3F00313939 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0648EEA23D12D3F00313939 /* Assets.swift */; };
 		D0648EF823D1949D00313939 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0648EF723D1949D00313939 /* DataStore.swift */; };
 		D0648F0A23D1C49900313939 /* SpotifyAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0648F0723D1C49800313939 /* SpotifyAuthentication.framework */; };
 		D0648F0B23D1C49900313939 /* SpotifyMetadata.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0648F0823D1C49800313939 /* SpotifyMetadata.framework */; };
 		D0648F0C23D1C49900313939 /* SpotifyAudioPlayback.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0648F0923D1C49900313939 /* SpotifyAudioPlayback.framework */; };
 		D0648F0F23D1CACE00313939 /* SpotifyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0648F0E23D1CACE00313939 /* SpotifyManager.swift */; };
 		D0648F2323D223F200313939 /* TrackListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0648F2223D223F200313939 /* TrackListViewModel.swift */; };
-		D0648F3223D22FD600313939 /* Reachability+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0648F3123D22FD600313939 /* Reachability+Rx.swift */; };
-		D0648F3423D2300800313939 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0648F3323D2300800313939 /* Reachability.swift */; };
 		D0648F3D23D234A200313939 /* Tracks.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0648F3523D234A000313939 /* Tracks.swift */; };
 		D0648F3E23D234A200313939 /* External_ids.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0648F3623D234A000313939 /* External_ids.swift */; };
 		D0648F3F23D234A200313939 /* Artists.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0648F3723D234A000313939 /* Artists.swift */; };
@@ -115,7 +112,6 @@
 		D0648EB823D0E47500313939 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		D0648EBA23D0E6D700313939 /* ViewModelHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelHolder.swift; sourceTree = "<group>"; };
 		D0648EE623D12D0A00313939 /* ServiceConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceConfig.swift; sourceTree = "<group>"; };
-		D0648EEA23D12D3F00313939 /* Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		D0648EF723D1949D00313939 /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		D0648F0323D1BBBE00313939 /* SpotifyTest-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SpotifyTest-Bridging-Header.h"; sourceTree = "<group>"; };
 		D0648F0723D1C49800313939 /* SpotifyAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SpotifyAuthentication.framework; sourceTree = "<group>"; };
@@ -123,8 +119,6 @@
 		D0648F0923D1C49900313939 /* SpotifyAudioPlayback.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SpotifyAudioPlayback.framework; sourceTree = "<group>"; };
 		D0648F0E23D1CACE00313939 /* SpotifyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyManager.swift; sourceTree = "<group>"; };
 		D0648F2223D223F200313939 /* TrackListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackListViewModel.swift; sourceTree = "<group>"; };
-		D0648F3123D22FD600313939 /* Reachability+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reachability+Rx.swift"; sourceTree = "<group>"; };
-		D0648F3323D2300800313939 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		D0648F3523D234A000313939 /* Tracks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tracks.swift; sourceTree = "<group>"; };
 		D0648F3623D234A000313939 /* External_ids.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = External_ids.swift; sourceTree = "<group>"; };
 		D0648F3723D234A000313939 /* Artists.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Artists.swift; sourceTree = "<group>"; };
@@ -272,8 +266,6 @@
 			isa = PBXGroup;
 			children = (
 				D0648F4523D247D000313939 /* APIManager.swift */,
-				D0648F3123D22FD600313939 /* Reachability+Rx.swift */,
-				D0648F3323D2300800313939 /* Reachability.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -428,7 +420,6 @@
 			isa = PBXGroup;
 			children = (
 				D0648EE623D12D0A00313939 /* ServiceConfig.swift */,
-				D0648EEA23D12D3F00313939 /* Assets.swift */,
 			);
 			path = Configs;
 			sourceTree = "<group>";
@@ -716,8 +707,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0648EB723D0D59B00313939 /* Extension.swift in Sources */,
-				D0648F3423D2300800313939 /* Reachability.swift in Sources */,
-				D0648F3223D22FD600313939 /* Reachability+Rx.swift in Sources */,
 				D0648F4323D234A200313939 /* Items.swift in Sources */,
 				D0648F4423D234A200313939 /* Images.swift in Sources */,
 				D0648F5323D2BA2C00313939 /* TrackDetailViewModel.swift in Sources */,
@@ -737,7 +726,6 @@
 				D0648EE723D12D0A00313939 /* ServiceConfig.swift in Sources */,
 				D0648F0F23D1CACE00313939 /* SpotifyManager.swift in Sources */,
 				D0648EBB23D0E6D700313939 /* ViewModelHolder.swift in Sources */,
-				D0648EEB23D12D3F00313939 /* Assets.swift in Sources */,
 				D0648EF823D1949D00313939 /* DataStore.swift in Sources */,
 				D0648EA623D0C8D000313939 /* BaseCoordinator.swift in Sources */,
 				D0648F4123D234A200313939 /* SpotifySearchResponse.swift in Sources */,

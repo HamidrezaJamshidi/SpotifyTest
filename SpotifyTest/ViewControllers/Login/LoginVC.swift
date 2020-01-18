@@ -11,7 +11,7 @@ import RxSwift
 import RxCocoa
 
 class LoginVC: UIViewController {
-
+    
     @IBOutlet var imgLogo: UIImageView!
     @IBOutlet var btnSignIn: UIButton!
     
@@ -47,7 +47,7 @@ class LoginVC: UIViewController {
         SpotifyManager.shared.emailId.subscribe(onNext: { email in
             print(email)
         }).disposed(by: disposeBag)
-
+        
     }
     
 }

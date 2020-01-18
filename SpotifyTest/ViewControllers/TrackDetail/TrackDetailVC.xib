@@ -29,7 +29,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1wx-v9-vcy">
-                    <rect key="frame" x="82" y="328" width="250" height="250"/>
+                    <rect key="frame" x="41.5" y="274" width="331" height="358"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                             <integer key="value" value="20"/>
@@ -37,19 +37,19 @@
                     </userDefinedRuntimeAttributes>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MTm-gU-3T9">
-                    <rect key="frame" x="20" y="598" width="374" height="17.5"/>
+                    <rect key="frame" x="20" y="652" width="374" height="19"/>
                     <fontDescription key="fontDescription" name="Circular-Book" family="Circular" pointSize="15"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Album" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EIX-vn-BRO">
-                    <rect key="frame" x="20" y="635.5" width="374" height="14"/>
+                    <rect key="frame" x="20" y="691" width="374" height="15.5"/>
                     <fontDescription key="fontDescription" name="Circular-Book" family="Circular" pointSize="12"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j2v-hr-Xc2">
-                    <rect key="frame" x="20" y="669.5" width="374" height="14"/>
+                    <rect key="frame" x="20" y="726.5" width="374" height="15.5"/>
                     <fontDescription key="fontDescription" name="Circular-Book" family="Circular" pointSize="12"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
@@ -57,11 +57,10 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J8Y-IM-RBy">
                     <rect key="frame" x="0.0" y="44" width="414" height="64"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jif-5J-ucn">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jif-5J-ucn">
                             <rect key="frame" x="311" y="0.0" width="83" height="64"/>
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <inset key="imageEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
-                            <state key="normal" image="redo"/>
+                            <state key="normal" image="ico-Back"/>
                         </button>
                     </subviews>
                     <color key="backgroundColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -82,10 +81,10 @@
                 <constraint firstItem="MTm-gU-3T9" firstAttribute="top" secondItem="1wx-v9-vcy" secondAttribute="bottom" constant="20" id="1qX-Qp-Whj"/>
                 <constraint firstItem="J8Y-IM-RBy" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="46i-ZK-6v0"/>
                 <constraint firstItem="MTm-gU-3T9" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Bwl-Nw-yY5"/>
-                <constraint firstItem="1wx-v9-vcy" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.603865" id="D6Y-up-irH"/>
+                <constraint firstItem="1wx-v9-vcy" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.8" id="D6Y-up-irH"/>
                 <constraint firstItem="j2v-hr-Xc2" firstAttribute="leading" secondItem="EIX-vn-BRO" secondAttribute="leading" id="Dfm-d2-npq"/>
                 <constraint firstItem="EIX-vn-BRO" firstAttribute="leading" secondItem="MTm-gU-3T9" secondAttribute="leading" id="Eis-3s-9kX"/>
-                <constraint firstItem="1wx-v9-vcy" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.279018" id="Fme-0e-QaG"/>
+                <constraint firstItem="1wx-v9-vcy" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.4" id="Fme-0e-QaG"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="J8Y-IM-RBy" secondAttribute="trailing" id="MDa-jW-FOZ"/>
                 <constraint firstItem="j2v-hr-Xc2" firstAttribute="top" secondItem="EIX-vn-BRO" secondAttribute="bottom" constant="20" id="RCZ-zd-Bti"/>
                 <constraint firstItem="j2v-hr-Xc2" firstAttribute="trailing" secondItem="EIX-vn-BRO" secondAttribute="trailing" id="RLA-GK-miN"/>
@@ -100,6 +99,6 @@
         </view>
     </objects>
     <resources>
-        <image name="redo" width="16" height="16"/>
+        <image name="ico-Back" width="17.5" height="18"/>
     </resources>
 </document>

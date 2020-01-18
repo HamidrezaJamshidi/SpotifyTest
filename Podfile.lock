@@ -3,7 +3,6 @@ PODS:
   - Kingfisher (5.12.0):
     - Kingfisher/Core (= 5.12.0)
   - Kingfisher/Core (5.12.0)
-  - ReachabilitySwift (5.0.0)
   - RxAlamofire (5.1.0):
     - RxAlamofire/Core (= 5.1.0)
   - RxAlamofire/Core (5.1.0):
@@ -22,7 +21,6 @@ PODS:
 
 DEPENDENCIES:
   - Kingfisher (~> 5.0)
-  - ReachabilitySwift
   - RxAlamofire
   - RxBlocking (~> 5)
   - RxCocoa (~> 5)
@@ -33,7 +31,6 @@ SPEC REPOS:
   trunk:
     - Alamofire
     - Kingfisher
-    - ReachabilitySwift
     - RxAlamofire
     - RxBlocking
     - RxCocoa
@@ -44,7 +41,6 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   Kingfisher: dc6e0f53bb5b12c3e75bedb0e01bbd7a640eea69
-  ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
   RxAlamofire: a2d7621de4c23a0c6e7b476b504acc32838ee341
   RxBlocking: c5e090f42d046df8b0e7752742510f349963710f
   RxCocoa: e741b9749968e8a143e2b787f1dfbff2b63d0a5c
@@ -52,6 +48,6 @@ SPEC CHECKSUMS:
   RxSwift: e2dc62b366a3adf6a0be44ba9f405efd4c94e0c4
   RxTest: 0132f952a61da82d5233abedaa559df91e5330e5
 
-PODFILE CHECKSUM: b937ea3cd84960aeb2d0d04abefb6451d8105200
+PODFILE CHECKSUM: d56ac4e14d26ce82e342136b4479a312466d7025
 
 COCOAPODS: 1.9.0.beta.2

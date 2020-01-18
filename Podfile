@@ -10,7 +10,6 @@ target 'SpotifyTest' do
     pod 'RxCocoa', '~> 5'
     pod 'RxAlamofire'
     pod 'Kingfisher', '~> 5.0'
-    pod 'ReachabilitySwift'
 
   target 'SpotifyTestTests' do
     inherit! :search_paths

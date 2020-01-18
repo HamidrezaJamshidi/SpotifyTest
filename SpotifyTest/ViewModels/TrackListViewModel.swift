@@ -9,21 +9,6 @@
 import Foundation
 import RxSwift
 
-
-struct Track {
-    let name: String
-    let artist: String
-    let album: String
-    let img: String
-    
-    init(name: String, album: String , artist: String , img: String) {
-        self.name = name
-        self.artist = artist
-        self.album = album
-        self.img = img
-    }
-}
-
 struct TrackListViewModel: ViewModel {
     
     let coordinator: TrackListCoordinator
@@ -51,13 +36,27 @@ struct TrackListViewModel: ViewModel {
             guard let tracks = listPage.items as? [SPTPartialTrack] else { return }
             
             for track in tracks {
-                guard let album = track.album as? SPTPartialAlbum else { return }
-                guard let img = track.album.largestCover as? SPTImage else { return }
+                guard let album = track.album else { return }
+                guard let img = track.album.largestCover else { return }
                 guard let artist = track.artists.first as? SPTPartialArtist else { return }
                 let track = Track(name: track.name, album: album.name, artist: artist.name, img: img.imageURL.absoluteString)
                 trackListItem.append(track)
             }
             self.trackList.onNext(trackListItem)
         }
+    }
+}
+
+struct Track {
+    let name: String
+    let artist: String
+    let album: String
+    let img: String
+    
+    init(name: String, album: String , artist: String , img: String) {
+        self.name = name
+        self.artist = artist
+        self.album = album
+        self.img = img
     }
 }
