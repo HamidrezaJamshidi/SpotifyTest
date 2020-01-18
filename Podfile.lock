@@ -1,12 +1,16 @@
 PODS:
+  - Alamofire (4.9.1)
+  - ReachabilitySwift (5.0.0)
+  - RxAlamofire (5.1.0):
+    - RxAlamofire/Core (= 5.1.0)
+  - RxAlamofire/Core (5.1.0):
+    - Alamofire (~> 4.8)
+    - RxSwift (~> 5.0)
   - RxBlocking (5.0.1):
     - RxSwift (~> 5)
   - RxCocoa (5.0.1):
     - RxRelay (~> 5)
     - RxSwift (~> 5)
-  - RxGesture (3.0.1):
-    - RxCocoa (~> 5.0)
-    - RxSwift (~> 5.0)
   - RxRelay (5.0.1):
     - RxSwift (~> 5)
   - RxSwift (5.0.1)
@@ -14,29 +18,34 @@ PODS:
     - RxSwift (~> 5)
 
 DEPENDENCIES:
+  - ReachabilitySwift
+  - RxAlamofire
   - RxBlocking (~> 5)
   - RxCocoa (~> 5)
-  - RxGesture
   - RxSwift (~> 5)
   - RxTest (~> 5)
 
 SPEC REPOS:
   trunk:
+    - Alamofire
+    - ReachabilitySwift
+    - RxAlamofire
     - RxBlocking
     - RxCocoa
-    - RxGesture
     - RxRelay
     - RxSwift
     - RxTest
 
 SPEC CHECKSUMS:
+  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
+  RxAlamofire: a2d7621de4c23a0c6e7b476b504acc32838ee341
   RxBlocking: c5e090f42d046df8b0e7752742510f349963710f
   RxCocoa: e741b9749968e8a143e2b787f1dfbff2b63d0a5c
-  RxGesture: a3f8dd6adf078110ed5e1c9c30d09d705a09852e
   RxRelay: 89d54507f4fd4d969e6ec1d4bd7f3673640b4640
   RxSwift: e2dc62b366a3adf6a0be44ba9f405efd4c94e0c4
   RxTest: 0132f952a61da82d5233abedaa559df91e5330e5
 
-PODFILE CHECKSUM: 0f4382aecec027e92a0416b19dad4dea8e9f7cb1
+PODFILE CHECKSUM: fa66e68404acc7badbd92438d23431603cea60de
 
 COCOAPODS: 1.9.0.beta.2

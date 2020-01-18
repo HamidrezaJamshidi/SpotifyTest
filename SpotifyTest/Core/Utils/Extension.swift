@@ -8,17 +8,6 @@
 
 import UIKit
 
-extension UIImageView {
-
-    func applyTransform(withScale scale: CGFloat, anchorPoint: CGPoint) {
-        layer.anchorPoint = anchorPoint
-        let scale = scale != 0 ? scale : CGFloat.leastNonzeroMagnitude
-        let xPadding = 1/scale * (anchorPoint.x - 0.5)*bounds.width
-        let yPadding = 1/scale * (anchorPoint.y - 0.5)*bounds.height
-        transform = CGAffineTransform(scaleX: scale, y: scale).translatedBy(x: xPadding, y: yPadding)
-    }
-
-}
 
 extension UIApplication {
     class var topViewController: UIViewController? { return getTopViewController() }
@@ -29,5 +18,26 @@ extension UIApplication {
         }
         if let presented = base?.presentedViewController { return getTopViewController(base: presented) }
         return base
+    }
+}
+
+extension UIImageView {
+    func downloaded(from url: URL, contentMode mode: UIView.ContentMode = .scaleAspectFit) {
+        contentMode = mode
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            guard
+                let httpURLResponse = response as? HTTPURLResponse, httpURLResponse.statusCode == 200,
+                let mimeType = response?.mimeType, mimeType.hasPrefix("image"),
+                let data = data, error == nil,
+                let image = UIImage(data: data)
+                else { return }
+            DispatchQueue.main.async() {
+                self.image = image
+            }
+        }.resume()
+    }
+    func downloaded(from link: String, contentMode mode: UIView.ContentMode = .scaleAspectFit) {  
+        guard let url = URL(string: link) else { return }
+        downloaded(from: url, contentMode: mode)
     }
 }

@@ -8,7 +8,8 @@ target 'SpotifyTest' do
   # Pods for SpotifyTest
     pod 'RxSwift', '~> 5'
     pod 'RxCocoa', '~> 5'
-    pod "RxGesture"
+    pod 'RxAlamofire'
+    pod 'ReachabilitySwift'
 
   target 'SpotifyTestTests' do
     inherit! :search_paths

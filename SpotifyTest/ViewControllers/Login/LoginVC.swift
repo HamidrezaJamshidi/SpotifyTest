@@ -32,10 +32,12 @@ class LoginVC: UIViewController {
     
     private func setupBinding() {
         btnSignIn.rx.tap.subscribe(onNext: {
-            if UIApplication.shared.openURL(SpotifyManager.shared.loginUrl!) {
-                if SpotifyManager.shared.auth.canHandle(SpotifyManager.shared.auth.redirectURL) {
-                }
-            }
+            SpotifyManager.shared.loginSpotify()
+        }).disposed(by: disposeBag)
+        
+        SpotifyManager.shared.isLoginsucceed.subscribe(onNext: { result in
+            self.viewModel.stopLogoAnimation()
+            self.viewModel.coordinator.coordinateToTrackList()
         }).disposed(by: disposeBag)
         
         SpotifyManager.shared.userId.subscribe(onNext: { userName in
@@ -47,4 +49,5 @@ class LoginVC: UIViewController {
         }).disposed(by: disposeBag)
 
     }
+    
 }

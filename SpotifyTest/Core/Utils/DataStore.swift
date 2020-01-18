@@ -7,8 +7,54 @@
 //
 
 import Foundation
-protocol DataStore: class {
-    func set<Value: Codable>(data: Value, for key:  PersistentManager.Key)
-    func get<Value>(for key:  PersistentManager.Key)->Value? where Value: Codable
-    func remove(for key:  PersistentManager.Key)
+
+class DataStore: NSObject {
+    
+    // MARK: - Shared Instance
+    
+    static let shared: DataStore = {
+        let instance = DataStore()
+        // setup code
+        return instance
+    }()
+    
+    // MARK: - Initialization Method
+    
+    override init() {
+        super.init()
+    }
+    
+    public func setPref(_ key: String?, value: String?) {
+        let defaults = UserDefaults.standard
+        defaults.set(value, forKey: key ?? "")
+        defaults.synchronize()
+    }
+    
+    public func getStringPref(_ key: String?) -> String? {
+        let defaults = UserDefaults.standard
+        return defaults.string(forKey: key ?? "")
+    }
+    
+    public func removePref(_ key: String?) {
+        let defaults = UserDefaults.standard
+        defaults.removeObject(forKey: key ?? "")
+    }
+    
+    //**************Encoadable Data***************
+    public func saveEncodable <T : Encodable> (name : T , key : String) {
+        let encoder = JSONEncoder()
+        if let encoded = try? encoder.encode(name) {
+            UserDefaults.standard.set(encoded, forKey: key)
+        }
+    }
+    
+    public func getDecodable <T : Decodable> (key : String , as type : T.Type) -> T? {
+        let decoder = JSONDecoder()
+        guard let  data = UserDefaults.standard.data(forKey: key),
+            let result = try? decoder.decode(type, from: data) else {return nil}
+        return result
+    }
+
 }
+
+

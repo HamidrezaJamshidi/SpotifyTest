@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="lineto-circular-book.ttf">
+            <string>Circular-Book</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="TrackListCell" rowHeight="83" id="No2-Ue-fpt" customClass="TrackListCell" customModule="SpotifyTest" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="429" height="83"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="No2-Ue-fpt" id="3nz-Jx-GGA">
+                <rect key="frame" x="0.0" y="0.0" width="429" height="83"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aTm-qv-bim">
+                        <rect key="frame" x="16" y="8" width="313" height="18"/>
+                        <fontDescription key="fontDescription" name="Circular-Book" family="Circular" pointSize="15"/>
+                        <color key="textColor" red="0.12941176470588234" green="0.12941176470588234" blue="0.12941176470588234" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NRb-Ti-mpB">
+                        <rect key="frame" x="339" y="2" width="80" height="79"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="NRb-Ti-mpB" secondAttribute="height" multiplier="83:82" id="NR7-bQ-Ml4"/>
+                            <constraint firstAttribute="width" constant="80" id="Oik-Py-5J4"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="40"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vSk-Cb-CcG">
+                        <rect key="frame" x="16" y="59.5" width="313" height="15.5"/>
+                        <fontDescription key="fontDescription" name="Circular-Book" family="Circular" pointSize="12"/>
+                        <color key="textColor" red="0.32549019607843138" green="0.32549019607843138" blue="0.32549019607843138" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Album" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sek-Sn-q9f">
+                        <rect key="frame" x="16" y="34" width="313" height="15.5"/>
+                        <fontDescription key="fontDescription" name="Circular-Book" family="Circular" pointSize="12"/>
+                        <color key="textColor" red="0.32549019607843138" green="0.32549019607843138" blue="0.32549019607843138" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstItem="sek-Sn-q9f" firstAttribute="centerY" secondItem="3nz-Jx-GGA" secondAttribute="centerY" id="0AR-0B-bbS"/>
+                    <constraint firstItem="aTm-qv-bim" firstAttribute="leading" secondItem="3nz-Jx-GGA" secondAttribute="leading" constant="16" id="306-8C-a8e"/>
+                    <constraint firstItem="NRb-Ti-mpB" firstAttribute="leading" secondItem="vSk-Cb-CcG" secondAttribute="trailing" constant="10" id="5ns-rS-u15"/>
+                    <constraint firstItem="NRb-Ti-mpB" firstAttribute="leading" secondItem="aTm-qv-bim" secondAttribute="trailing" constant="10" id="B5O-aE-pHM"/>
+                    <constraint firstItem="NRb-Ti-mpB" firstAttribute="centerY" secondItem="3nz-Jx-GGA" secondAttribute="centerY" id="Lol-2r-rBS"/>
+                    <constraint firstItem="aTm-qv-bim" firstAttribute="top" secondItem="3nz-Jx-GGA" secondAttribute="top" constant="8" id="blV-jm-61G"/>
+                    <constraint firstAttribute="trailing" secondItem="NRb-Ti-mpB" secondAttribute="trailing" constant="10" id="jil-zl-es6"/>
+                    <constraint firstItem="sek-Sn-q9f" firstAttribute="top" secondItem="aTm-qv-bim" secondAttribute="bottom" constant="8" id="k2P-2V-gxR"/>
+                    <constraint firstItem="vSk-Cb-CcG" firstAttribute="leading" secondItem="3nz-Jx-GGA" secondAttribute="leading" constant="16" id="k2v-Bk-4qU"/>
+                    <constraint firstItem="sek-Sn-q9f" firstAttribute="leading" secondItem="3nz-Jx-GGA" secondAttribute="leading" constant="16" id="low-Yq-cSd"/>
+                    <constraint firstItem="NRb-Ti-mpB" firstAttribute="leading" secondItem="sek-Sn-q9f" secondAttribute="trailing" constant="10" id="okX-IZ-wA4"/>
+                    <constraint firstAttribute="bottom" secondItem="vSk-Cb-CcG" secondAttribute="bottom" constant="8" id="tzK-IG-6Pp"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <viewLayoutGuide key="safeArea" id="lVL-jC-kn0"/>
+            <connections>
+                <outlet property="albumLabel" destination="sek-Sn-q9f" id="0nc-3Z-Mq8"/>
+                <outlet property="artistLabel" destination="vSk-Cb-CcG" id="JQ9-gc-V4D"/>
+                <outlet property="titleLabel" destination="aTm-qv-bim" id="J66-do-5gW"/>
+                <outlet property="trackImage" destination="NRb-Ti-mpB" id="8vA-RQ-ku4"/>
+            </connections>
+            <point key="canvasLocation" x="216.66666666666669" y="79.352678571428569"/>
+        </tableViewCell>
+    </objects>
+</document>

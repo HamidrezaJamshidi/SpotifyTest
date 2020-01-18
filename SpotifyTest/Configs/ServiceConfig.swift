@@ -8,23 +8,17 @@
 
 import Foundation
 
-public enum ServerUrl: String {
+public enum ServerConfig: String {
     case clientID = "ba05b9cd59634cefa8493ac961d76ed6"
     case clientSecret = "80b7235a88264654a105a989f6775a59"
     case redirectURI = "dpg://mydigipay/"
     case loginURL = "https://accounts.spotify.com/authorize"
     case afterLoginNotificationKey = "SpotifyLoginNotification"
     case searchUrl = "https://api.spotify.com/v1/search"
+    case tokenUrl = "https://accounts.spotify.com/api/token"
     case searchLimit = "10"
-}
-
-extension RequestBuilder {
-    static var apiLoginUrlString: String {ServerUrl.loginURL.rawValue}
-    static var apiSearchUrlString: String {ServerUrl.searchUrl.rawValue}
-    static var apiRedirectUrlString: String {ServerUrl.redirectURI.rawValue}
-    
-    convenience init(path: String) {
-        let url = URL(string: "\(RequestBuilder.apiLoginUrlString)\(path)")!
-        self.init(url: url)
+    case grantType = "client_credentials"
+    static func searchUrl(searchString: String , token : String) -> String {
+        return "https://api.spotify.com/v1/search?q=\(searchString)&type=track&limit=5&access_token=\(token)"
     }
 }

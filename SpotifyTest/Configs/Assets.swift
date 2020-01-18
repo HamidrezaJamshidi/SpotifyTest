@@ -7,3 +7,7 @@
 //
 
 import Foundation
+
+extension UIImage {
+    static let placeholder = UIImage(named: "placeholder")
+}
